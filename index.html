@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>中国地图示例</title>
+    <!-- 引入 Echarts 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+    <!-- 引入中国地图的 GeoJSON 数据，用于绘制地图轮廓 -->
+    <script src="https://echarts.baidu.com/examples/data/asset/data/china.json"></script>
+</head>
+
+<body>
+    <div id="main" style="width: 1000px; height: 600px;"></div>
+    <script>
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 配置项
+        var option = {
+            title: {
+                text: '中国地图',
+                left: 'center'
+            },
+            tooltip: {},
+            series: [
+                {
+                    type: 'map',
+                    map: 'china',
+                    data: []
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
